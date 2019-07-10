@@ -1,0 +1,39 @@
+---
+layout: layouts/base.html
+welcomeMessage: Hello World!
+---
+
+<h1>{{ welcomeMessage }} This is {{ settings.siteName }}</h1>
+
+{% for post in collections.posts %}
+<a href="{{ post.url }}">{{ post.data.title }}</a>
+{% endfor %} {% for item in data %}
+{{ data.title }}
+{% endfor %}
+
+<!-- the pipe | below tells eleventy/liquid that this is a filter -->
+{% assign userSearch = data | lookup: 'Kurtis' %}
+
+<h2>Users:</h2>
+<!-- With the filter: -->
+<h3>Filtered:</h3>
+<ul>
+  {% for user in userSearch %}
+  <li>{{ user.name }}</li>
+  {% endfor %}
+</ul>
+
+<!-- Without the filter, use below: -->
+<h3>Full List:</h3>
+<ul>
+  {% for user in data %}
+  <li>{{ user.name }}</li>
+  {% endfor %}
+</ul>
+
+<!-- in the front matter, specify a path to a template to use, from the root of the templates folder -->
+<!-- 'layout' and 'welcomeMessage' are variables  -->
+
+<!-- run 'eleventy' in terminal -->
+<!-- eleventy --serve to run browser-sync server in dist directory -->
+<!-- restart server when you change eleventy config -->
