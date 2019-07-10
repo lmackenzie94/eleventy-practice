@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Eleventy - Practice</title>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  </head>
+
+  <body>
+    <a href="/">HOME</a>
+    
+<h1>Hello World! This is Eleventy</h1>
+
+
+<a href="/posts/welcome-post/">This is our first blog post</a>
+
+<a href="/posts/post-two/">This is our second blog post</a>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- the pipe | below tells eleventy/liquid that this is a filter -->
+
+
+<h2>Users:</h2>
+<!-- With the filter: -->
+<h3>Filtered:</h3>
+<ul>
+  
+  <li>Kurtis Weissnat</li>
+  
+</ul>
+
+<!-- Without the filter, use below: -->
+<h3>Full List:</h3>
+<ul>
+  
+  <li>Leanne Graham</li>
+  
+  <li>Ervin Howell</li>
+  
+  <li>Clementine Bauch</li>
+  
+  <li>Patricia Lebsack</li>
+  
+  <li>Chelsey Dietrich</li>
+  
+  <li>Mrs. Dennis Schulist</li>
+  
+  <li>Kurtis Weissnat</li>
+  
+  <li>Nicholas Runolfsdottir V</li>
+  
+  <li>Glenna Reichert</li>
+  
+  <li>Clementina DuBuque</li>
+  
+</ul>
+
+<!-- in the front matter, specify a path to a template to use, from the root of the templates folder -->
+<!-- 'layout' and 'welcomeMessage' are variables  -->
+
+<!-- run 'eleventy' in terminal -->
+<!-- eleventy --serve to run browser-sync server in dist directory -->
+<!-- restart server when you change eleventy config -->
+
+  </body>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+</html>
